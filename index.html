@@ -11,8 +11,8 @@
 </head>
 <body class="bg-dark text-white">
     <div id="app" class="wrapper w-100 vh-100 d-flex flex-column justify-content-center align-items-center">
-        <h1 class="carousel-title active mb-2 text-white">{{images[imgIndex].title}}</h1>
-        <p class="carousel-subtitle active mb-5">{{images[imgIndex].text}}</p>
+        <h1 class="mb-2 text-white">{{images[imgIndex].title}}</h1>
+        <p class="mb-5">{{images[imgIndex].text}}</p>
         <!-- FULL CAROUSEL CONTAINER -->
         <div @mouseover="stopAutoplay" @mouseout="startAutoplay(goNext)" class="full-carousel d-flex justify-content-center align-items-center">
             <!-- SLIDER -->
@@ -21,7 +21,7 @@
             </div>
             <!-- THUMBNAILS -->
             <div class="thumbnails position-relative">
-                <div v-for="(img, index) in images" :class='"thumb" + " " + ((imgIndex === index) ? "active" : "" )'>
+                <div v-for="(img, index) in images" @click="makeActive(index)" :class='"thumb" + " " + ((imgIndex === index) ? "active" : "" )'>
                     <img :src='"./" + images[index].image' :alt="images[index].title">
                 </div>
                 <!-- BUTTON PREV -->

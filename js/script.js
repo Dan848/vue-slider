@@ -43,6 +43,9 @@ createApp({
         },
         stopAutoplay () {
             clearInterval(this.intervalGoNext);
+        },
+        makeActive(index) {
+            this.imgIndex = index;
         }
     },
     mounted(){
