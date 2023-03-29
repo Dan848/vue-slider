@@ -31,22 +31,11 @@ createApp({
     },
     methods: {
         goNext() {
-            if (this.imgIndex === this.images.length - 1) {
-                this.imgIndex = 0;
-            }
-
-            else {
-                this.imgIndex ++;
-            }
+            (this.imgIndex === this.images.length - 1) ? this.imgIndex = 0 : this.imgIndex ++;
+            
         },
         goPrev() {
-            if (imgIndex === 0) {
-                imgIndex = images.length - 1;
-            }
-
-            else {
-                imgIndex --;
-            }
+            (this.imgIndex === 0) ? this.imgIndex = this.images.length - 1 : this.imgIndex --;
         }
     },
     mounted(){

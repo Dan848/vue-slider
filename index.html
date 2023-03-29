@@ -21,7 +21,7 @@
             </div>
             <!-- THUMBNAILS -->
             <div class="thumbnails position-relative">
-                <div v-for="(img, index) in images" class="thumb">
+                <div v-for="(img, index) in images" :class='"thumb" + " " + ((imgIndex === index) ? "active" : "" )'>
                     <img :src='"./" + images[index].image' :alt="images[index].title">
                 </div>
                 <!-- BUTTON PREV -->
