@@ -14,7 +14,7 @@
         <h1 class="carousel-title active mb-2 text-white">{{images[imgIndex].title}}</h1>
         <p class="carousel-subtitle active mb-5">{{images[imgIndex].text}}</p>
         <!-- FULL CAROUSEL CONTAINER -->
-        <div class="full-carousel d-flex justify-content-center align-items-center">
+        <div @mouseover="stopAutoplay" @mouseout="startAutoplay(goNext)" class="full-carousel d-flex justify-content-center align-items-center">
             <!-- SLIDER -->
             <div class="slider active d-flex">
                 <img :src='"./" + images[imgIndex].image' :alt="images[imgIndex].title">
