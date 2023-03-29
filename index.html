@@ -11,19 +11,23 @@
 </head>
 <body class="bg-dark text-white">
     <div id="app" class="wrapper w-100 vh-100 d-flex flex-column justify-content-center align-items-center">
-        <h1 class="carousel-title active mb-2 text-white">{{images[0].title}}</h1>
-        <p class="carousel-subtitle active mb-5">{{images[0].text}}</p>
+        <h1 class="carousel-title active mb-2 text-white">{{images[imgIndex].title}}</h1>
+        <p class="carousel-subtitle active mb-5">{{images[imgIndex].text}}</p>
         <!-- FULL CAROUSEL CONTAINER -->
         <div class="full-carousel d-flex justify-content-center align-items-center">
             <!-- SLIDER -->
-            <div class="slider d-flex">
+            <div class="slider active d-flex">
+                <img :src='"./" + images[imgIndex].image' :alt="images[imgIndex].title">
             </div>
             <!-- THUMBNAILS -->
             <div class="thumbnails position-relative">
+                <div v-for="(img, index) in images" class="thumb">
+                    <img :src='"./" + images[index].image' :alt="images[index].title">
+                </div>
                 <!-- BUTTON PREV -->
-                <button class="prev"><i class="fa-solid fa-angle-up"></i></button>
+                <button @click="goPrev" class="prev"><i class="fa-solid fa-angle-up"></i></button>
                 <!-- BUTTON NEXT -->
-                <button class="next"><i class="fa-solid fa-angle-down"></i></button>
+                <button @click="goNext" class="next"><i class="fa-solid fa-angle-down"></i></button>
             </div>
         </div>
     </div>
