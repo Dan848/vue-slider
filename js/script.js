@@ -39,7 +39,7 @@ createApp({
             (this.imgIndex === 0) ? this.imgIndex = this.images.length - 1 : this.imgIndex --;
         },
         startAutoplay(func) {
-            this.intervalGoNext = setInterval (func, 2000);
+            this.intervalGoNext = setInterval (func, 3000);
         },
         stopAutoplay () {
             clearInterval(this.intervalGoNext);
